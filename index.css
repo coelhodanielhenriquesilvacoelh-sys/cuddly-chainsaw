@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Work+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: 'Work Sans', sans-serif;
+    background: #FDFBF7;
+    color: #0F172A;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .font-display {
+    font-family: 'Outfit', sans-serif;
+}
+
+@layer base {
+    :root {
+        --background: 40 50% 98%;
+        --foreground: 222 47% 11%;
+        --card: 0 0% 100%;
+        --card-foreground: 222 47% 11%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 222 47% 11%;
+        --primary: 160 84% 39%;
+        --primary-foreground: 222 47% 11%;
+        --secondary: 43 96% 56%;
+        --secondary-foreground: 222 47% 11%;
+        --muted: 210 40% 96%;
+        --muted-foreground: 215 16% 47%;
+        --accent: 188 95% 43%;
+        --accent-foreground: 222 47% 11%;
+        --destructive: 0 84% 60%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 222 47% 11%;
+        --input: 222 47% 11%;
+        --ring: 160 84% 39%;
+        --radius: 0.75rem;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+/* Neo-brutalist utility classes */
+.nb-shadow {
+    box-shadow: 6px 6px 0px #0F172A;
+}
+.nb-shadow-lg {
+    box-shadow: 10px 10px 0px #0F172A;
+}
+.nb-shadow-sm {
+    box-shadow: 3px 3px 0px #0F172A;
+}
+.nb-border {
+    border: 4px solid #0F172A;
+}
+.nb-border-thick {
+    border: 6px solid #0F172A;
+}
+
+.nb-btn {
+    border: 4px solid #0F172A;
+    box-shadow: 6px 6px 0px #0F172A;
+    transition: transform 120ms ease, box-shadow 120ms ease;
+}
+.nb-btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 0px #0F172A;
+}
+.nb-btn:active {
+    transform: translate(4px, 4px);
+    box-shadow: 1px 1px 0px #0F172A;
+}
+
+/* Custom scanline / grain backdrop */
+.grain {
+    position: relative;
+}
+.grain::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 25% 25%, rgba(15,23,42,0.04) 1px, transparent 1px),
+                      radial-gradient(circle at 75% 75%, rgba(15,23,42,0.04) 1px, transparent 1px);
+    background-size: 18px 18px;
+    pointer-events: none;
+}
+
+/* Game canvas container */
+.pixel-perfect {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
+/* Popup slide in */
+@keyframes slide-up {
+    from { opacity: 0; transform: translateY(20px) scale(0.95); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+.anim-slide-up { animation: slide-up 260ms cubic-bezier(0.22, 1, 0.36, 1) both; }
+
+@keyframes pop-in {
+    0%   { opacity: 0; transform: scale(0.7); }
+    60%  { transform: scale(1.08); }
+    100% { opacity: 1; transform: scale(1); }
+}
+.anim-pop-in { animation: pop-in 320ms cubic-bezier(0.22, 1, 0.36, 1) both; }
+
+@keyframes pulse-ring {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.06); }
+    100% { transform: scale(1); }
+}
+.anim-pulse { animation: pulse-ring 500ms ease-out; }
+
+@keyframes bob {
+    0%,100% { transform: translateY(0); }
+    50%     { transform: translateY(-6px); }
+}
+.anim-bob { animation: bob 2.4s ease-in-out infinite; }
+
+@keyframes marquee {
+    from { background-position: 0 0; }
+    to   { background-position: 40px 0; }
+}
+.stripes {
+    background-image: repeating-linear-gradient(45deg, #0F172A 0 8px, transparent 8px 20px);
+    animation: marquee 1.2s linear infinite;
+}
