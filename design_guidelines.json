@@ -1,0 +1,115 @@
+{
+  "project_name": "EcoEnergy Quest - 2D Educational Game",
+  "theme": "light",
+  "archetype": "Neo-Brutalist Energy (Hybrid of Archetype 6: Vibrant Play & Archetype 1: Organic & Earthy)",
+  "design_philosophy": "Modern indie game aesthetic. Ditching corporate SaaS looks for tactile, 'crafted' Neo-Brutalism. The UI should feel like a premium Nintendo Switch indie game: sharp, playful, clear, and energetic. Perfect for high schoolers—not too childish, but deeply engaging.",
+  "colors": {
+    "background": {
+      "base": "#FDFBF7",
+      "description": "Warm off-white, paper-like feel to avoid harsh digital white."
+    },
+    "text": {
+      "primary": "#0F172A",
+      "secondary": "#334155",
+      "description": "Deep slate/charcoal for all borders and text. Never use pure black or light gray for text."
+    },
+    "accents": {
+      "eco_primary": "#10B981",
+      "solar_amber": "#F59E0B",
+      "hydro_cyan": "#06B6D4",
+      "wind_slate": "#94A3B8",
+      "victory_gold": "#FBBF24",
+      "danger_red": "#EF4444"
+    },
+    "surfaces": {
+      "card_bg": "#FFFFFF",
+      "hud_bg": "rgba(255, 255, 255, 0.9)",
+      "overlay": "rgba(15, 23, 42, 0.6)"
+    }
+  },
+  "typography": {
+    "fonts": {
+      "headings": "'Outfit', sans-serif",
+      "body": "'Work Sans', sans-serif"
+    },
+    "hierarchy": {
+      "h1_title": "text-5xl sm:text-6xl font-black tracking-tight uppercase",
+      "h2_phase": "text-3xl sm:text-4xl font-bold tracking-tight",
+      "h3_card": "text-xl sm:text-2xl font-bold",
+      "body": "text-base font-medium",
+      "hud_stats": "text-lg font-bold tracking-wide",
+      "small_label": "text-xs font-bold uppercase tracking-[0.1em]"
+    },
+    "instructions": "Import 'Outfit' and 'Work Sans' from Google Fonts. Headings must always be highly readable. Avoid delicate thin weights; rely on bold/black weights for game UI."
+  },
+  "spacing_and_layout": {
+    "generous_spacing": "Use p-6 or p-8 for inner card padding. For main menus, gap-8.",
+    "border_radius": "rounded-2xl for main cards, rounded-full for HUD pills.",
+    "grids": "Use Bento grid (Tetris mode) for the Phase Selection screen. Asymmetrical sizes for different levels.",
+    "canvas_area": "The game canvas should be 16:9 aspect ratio, centered, max-w-6xl mx-auto, with a thick border."
+  },
+  "surfaces_and_shadows": {
+    "neo_brutalist": {
+      "borders": "border-4 border-slate-900",
+      "shadows": "shadow-[6px_6px_0px_#0F172A]",
+      "hover": "hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[4px_4px_0px_#0F172A]",
+      "active": "active:translate-x-[6px] active:translate-y-[6px] active:shadow-none"
+    },
+    "hud_elements": {
+      "style": "backdrop-blur-md bg-white/90 border-2 border-slate-900 shadow-[4px_4px_0px_#0F172A]"
+    }
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-emerald-500 text-slate-900 border-4 border-slate-900 shadow-[6px_6px_0px_#0F172A] rounded-xl font-bold uppercase tracking-wide hover:-translate-y-1 hover:shadow-[6px_10px_0px_#0F172A] transition-all",
+      "secondary": "bg-white text-slate-900 border-4 border-slate-900 shadow-[6px_6px_0px_#0F172A] rounded-xl font-bold uppercase hover:bg-slate-100 transition-all",
+      "play_huge": "text-3xl py-6 px-12 bg-amber-400 text-slate-900 rounded-2xl border-4 border-slate-900 shadow-[8px_8px_0px_#0F172A]"
+    },
+    "energy_bar": {
+      "container": "h-8 w-64 bg-white border-4 border-slate-900 rounded-full overflow-hidden",
+      "fill": "h-full bg-emerald-500 border-r-4 border-slate-900 transition-all duration-300 ease-out"
+    },
+    "tutorial_card": {
+      "container": "bg-amber-50 border-4 border-slate-900 shadow-[12px_12px_0px_#0F172A] rounded-2xl p-8 max-w-md w-full relative",
+      "close_btn": "absolute -top-4 -right-4 bg-red-500 w-10 h-10 rounded-full border-4 border-slate-900 flex items-center justify-center font-bold text-white shadow-[4px_4px_0px_#0F172A]"
+    }
+  },
+  "motion": {
+    "bouncy_ui": "Use Framer Motion with spring physics: { type: 'spring', stiffness: 300, damping: 20 }. Elements should pop in.",
+    "hover_states": "Interactive elements should feel tactile, pushing down into their shadows on click.",
+    "energy_collect": "When energy is collected, the HUD bar should pulse slightly (scale up to 1.05 and back)."
+  },
+  "icons": {
+    "library": "lucide-react",
+    "usage": "Use bold, thick-stroked icons (strokeWidth={3}). Map Sun for Solar, Droplets for Hydro, Wind for Wind power, Zap for Energy."
+  },
+  "media": {
+    "images": [
+      {
+        "category": "victory_screen_background",
+        "url": "https://images.pexels.com/photos/35454188/pexels-photo-35454188.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1024&w=1536",
+        "description": "Aerial view of an eco-friendly city with solar panels and green spaces. Use as a full-screen background overlay with bg-slate-900/60 on top for the Victory screen."
+      },
+      {
+        "category": "phase_select_wind",
+        "url": "https://images.pexels.com/photos/15596746/pexels-photo-15596746.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Wind turbines at sunset. Use as the thumbnail/background for the Wind Energy Phase selection card."
+      },
+      {
+        "category": "phase_select_solar",
+        "url": "https://images.pexels.com/photos/11456463/pexels-photo-11456463.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Solar panels at sunset. Use as the thumbnail/background for the Solar Energy Phase selection card."
+      }
+    ]
+  },
+  "testing": {
+    "attributes": "All buttons, phase cards, tutorial closes, and the energy bar MUST include data-testid attributes (e.g., data-testid='start-game-btn', data-testid='energy-progress-bar')."
+  },
+  "instructions_to_main_agent": [
+    "Do NOT use generic Shadcn cards for the UI. Build custom Neo-Brutalist divs using the 'surfaces_and_shadows' classes provided.",
+    "The 2D HTML5 canvas should be wrapped in a container that looks like a retro TV or a tablet with thick borders.",
+    "Implement the UI in pure React components layering over the Canvas (e.g., Main Menu -> Phase Select -> Canvas + HUD).",
+    "Use Framer Motion to animate the phase cards popping in stagger-style.",
+    "For the ElevenLabs audio integration, create a simple non-blocking audio play utility and trigger it on tutorial popups. Show a 'Speaker' icon toggler in the HUD."
+  ]
+}

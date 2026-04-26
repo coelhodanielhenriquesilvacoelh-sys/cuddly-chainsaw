@@ -1,2 +1,1 @@
-# cuddly-chainsaw
-jogo de educação
+# Here are your Instructions
